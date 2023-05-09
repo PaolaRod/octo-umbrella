@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"types": ["cypress", "cypress-file-upload", "cypress-xpath", "cypress-downloadfile", "cypress-plugin-api"],
+		"paths": {
+			"@pages/*": ["./cypress/support/pages/*"],
+			"@helper/*": ["./cypress/support/helper/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"reporterEnabled": "spec, mocha-junit-reporter, mochawesome",
+	"mochaJunitReporterReporterOptions": {
+		"mochaFile": "reports/test-results.xml",
+		"toConsole": false,
+		"outputs": true,
+		"testCaseSwitchClassnameAndName": true
+	},
+	"mochawesomeReporterReporterOptions": {
+		"mochaFile": "mochawesome.json"
+	}
+}
