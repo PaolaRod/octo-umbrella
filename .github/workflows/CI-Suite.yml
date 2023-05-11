@@ -21,37 +21,37 @@ jobs:
                   npm install 
                   npm list
 
-            # - name: 💾Download Cucumber-Formatter
-            #   uses: suisei-cn/actions-download-file@v1.3.0
-            #   with:
-            #       url: '[Linux-cucumber-formatter](https://github.com/cucumber/json-formatter/releases/download/v19.0.0/cucumber-json-formatter-linux-amd64)'
-            #       target: cucumber-formatter/
-            #       auto-match: true
+            - name: 💾Download Cucumber-Formatter
+              uses: suisei-cn/actions-download-file@v1.3.0
+              with:
+                  url: '[Linux-cucumber-formatter](https://github.com/cucumber/json-formatter/releases/download/v19.0.0/cucumber-json-formatter-linux-amd64)'
+                  target: cucumber-formatter/
+                  auto-match: true
 
-            # - name: 🔧Install Cucumber-Formatter
-            #   run: |
-            #       mv cucumber-formatter/cucumber-json-formatter-linux-amd64 cucumber-formatter/cucumber-json-formatter
-            #       chmod +x cucumber-formatter/cucumber-json-formatter
+            - name: 🔧Install Cucumber-Formatter
+              run: |
+                  mv cucumber-formatter/cucumber-json-formatter-linux-amd64 cucumber-formatter/cucumber-json-formatter
+                  chmod +x cucumber-formatter/cucumber-json-formatter
 
-            # - name: 🔌Cucumber Preprocessor JSON Setup
-            #   uses: DamianReeves/write-file-action@master
-            #   with:
-            #       write-mode: overwrite
-            #       path: .cypress-cucumber-preprocessorrc.json
-            #       contents: |
-            #           {
-            #             "nonGlobalStepDefinitions": true,
-            #             "stepDefinitions": "cypress/e2e/cucumber-test/stepDefinitions/*.{js,ts}",
-            #             "json": {
-            #               "enabled": true,
-            #               "formatter": "./cucumber-formatter/cucumber-json-formatter",
-            #               "output": "./reports/cucumber-report.json"
-            #             },
-            #             "messages": {
-            #               "enabled": true,
-            #               "output": "./reports/cucumber-messages.ndjson"
-            #             }
-            #           }
+            - name: 🔌Cucumber Preprocessor JSON Setup
+              uses: DamianReeves/write-file-action@master
+              with:
+                  write-mode: overwrite
+                  path: .cypress-cucumber-preprocessorrc.json
+                  contents: |
+                      {
+                        "nonGlobalStepDefinitions": true,
+                        "stepDefinitions": "cypress/e2e/cucumber-test/stepDefinitions/*.{js,ts}",
+                        "json": {
+                          "enabled": true,
+                          "formatter": "./cucumber-formatter/cucumber-json-formatter",
+                          "output": "./reports/cucumber-report.json"
+                        },
+                        "messages": {
+                          "enabled": true,
+                          "output": "./reports/cucumber-messages.ndjson"
+                        }
+                      }
 
             - name: 🧪Cypress Run Test Coverage in Chrome
               uses: cypress-io/github-action@v4
