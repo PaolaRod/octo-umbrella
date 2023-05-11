@@ -1,11 +1,7 @@
 name: 🤖CI run (BUILD) Test Suite Execution⚡
 run-name: ${{github.actor}}👨🏻‍🔬 run Test Suite in ${{github.ref_name}}
 
-on: # This Run is a template. The correct "Run On" should be: Any except QA and Main
-    push:
-        branches-ignore:
-            - main
-            - QA
+on: [push]
 
 jobs:
     Build-Cypress-TestSuite-AfterPush:
