@@ -55,4 +55,4 @@ ___
     * Thanks to this, a single mochawesome HTML Report will be generated to evaluate ALL Regression Test Results.
 ___
 7. **NOW WITH CYPRESS DASHBOARD**, you can view all project test executions and results!
-Visit: [CYPRESS DASHBOARD](https://dashboard.cypress.io/projects/2pw67q/analytics/runs-over-time)
+Visit: [CYPRESS DASHBOARD](https://dashboard.cypress.io/projects/mu3icw/analytics/runs-over-time)

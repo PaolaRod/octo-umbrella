@@ -132,3 +132,14 @@ dist
 # Cypress
 /cypress/videos/
 /cypress/screenshots/
+
+.DS_Store
+.pytest_cache
+videos
+downloads
+screenshots
+mochawesome-report
+reports
+mochawesome.json
+cucumber-json-formatter
+cucumber-json-formatter.exe
